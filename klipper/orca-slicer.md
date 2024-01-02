@@ -17,19 +17,10 @@ END_PRINT
 
 ## Before Layer Change
 
-> TODO move lógic to klipper macro
-> TODO move timelapse macro to TIMELAPSE MACHINE G-CODE
-
 ```gcode
 ;BEFORE_LAYER_CHANGE
 ;[layer_z]
 G92 E0
-
-{ if layer_num > 2 }
-TIMELAPSE_TAKE_FRAME
-{ else }
-; timelapse: no take frame in layer {layer_num + 1}
-{ endif }
 ```
 
 ## Layer Change
@@ -46,4 +37,6 @@ PAUSE
 
 ## Timelapse
 
-> TODO
+```gcode
+TIMELAPSE_TAKE_FRAME
+```
